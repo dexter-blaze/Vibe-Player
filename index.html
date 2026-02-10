@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibePlayer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>VibePlayer</h1>
+        <button id="theme-toggle" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+    </header>
+
+    <div class="container">
+        <!-- Playlist Section -->
+        <div class="playlist-div">
+            <h2>Playlists</h2>
+            <div class="playlist-controls">
+                <input type="text" id="playlist-search" placeholder="Search playlists...">
+                <button id="create-playlist-btn" title="Create Playlist"><i class="fas fa-plus"></i></button>
+            </div>
+            <ul id="playlist-list">
+                <!-- Playlists will be rendered here -->
+            </ul>
+        </div>
+
+        <!-- All Songs Section -->
+        <div class="all-song-div">
+            <h2>All Songs</h2>
+            <div class="song-controls">
+                <input type="text" id="song-search" placeholder="Search for a song...">
+                <select id="genre-filter">
+                    <option value="All">All Genres</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Hip Hop">Hip Hop</option>
+                    <option value="Electronic">Electronic</option>
+                </select>
+            </div>
+            <ul id="song-list">
+                <!-- Songs will be rendered here -->
+            </ul>
+        </div>
+
+        <!-- Player Card Section -->
+        <div class="card-div">
+            <div class="card-content">
+                <img id="album-art" src="https://loremflickr.com/300/300/vinyl,record" alt="Album Art">
+                <h2 id="song-name">Select a Song</h2>
+                <h3 id="artist-name">to start playing</h3>
+
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="seek-bar" value="0" min="0" max="100">
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="controls">
+                    <button id="prev-btn" title="Previous"><i class="fas fa-backward"></i></button>
+                    <button id="play-pause-btn" title="Play/Pause"><i class="fas fa-play"></i></button>
+                    <button id="next-btn" title="Next"><i class="fas fa-forward"></i></button>
+                </div>
+
+                <button id="add-to-playlist-btn"><i class="fas fa-plus-circle"></i> Add to Playlist</button>
+
+                <!-- Audio Element (hidden) -->
+                <audio id="audio-player"></audio>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
